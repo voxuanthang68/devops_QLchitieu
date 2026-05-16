@@ -12,7 +12,7 @@ services:
       - key: PORT
         value: 5000
       - key: MONGODB_URI
-        value: mongodb+srv://vxthangg290604_db_user:x_dse56U.UT2_Hq@cluster0.szujvoc.mongodb.net/expense-tracker?retryWrites=true&w=majority
+        value: mongodb+srv://devops_db_user:admin12345678@cluster0.szujvoc.mongodb.net/expense-tracker?retryWrites=true&w=majority
       - key: NODE_ENV
         value: production
 
