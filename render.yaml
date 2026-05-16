@@ -12,7 +12,7 @@ services:
       - key: PORT
         value: 5000
       - key: MONGODB_URI
-        sync: false # User will set this in Render Dashboard (from MongoDB Atlas)
+        value: mongodb+srv://devops_db_user:yUodWsQCtuDyU3R@cluster0.szujvoc.mongodb.net/expense-tracker?retryWrites=true&w=majority
       - key: NODE_ENV
         value: production
 
