@@ -25,6 +25,9 @@ services:
     region: singapore
     dockerContext: .
     dockerfilePath: frontend/Dockerfile
+    buildArgs:
+      - key: VITE_API_URL
+        value: https://expense-tracker-api-zxzj.onrender.com/api
     envVars:
       - key: VITE_API_URL
         value: https://expense-tracker-api-zxzj.onrender.com/api # Nginx will proxy this to the backend if configured, 
