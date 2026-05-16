@@ -1,0 +1,31 @@
+services:
+  # Backend API
+  - type: web
+    name: expense-tracker-api
+    env: docker
+    repo: https://github.com/voxuanthang68/devops_QLchitieu
+    plan: free
+    region: singapore
+    dockerContext: backend
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: MONGODB_URI
+        sync: false # User will set this in Render Dashboard (from MongoDB Atlas)
+      - key: NODE_ENV
+        value: production
+
+  # Frontend UI
+  - type: web
+    name: expense-tracker-ui
+    env: docker
+    repo: https://github.com/voxuanthang68/devops_QLchitieu
+    plan: free
+    region: singapore
+    dockerContext: frontend
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: VITE_API_URL
+        value: /api # Nginx will proxy this to the backend if configured, 
+                    # but on Render, it's better to use the actual Backend URL.
