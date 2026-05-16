@@ -5,11 +5,11 @@ FROM node:18-alpine
 WORKDIR /app
 
 # Copy package.json và cài đặt dependencies
-COPY package*.json ./
+COPY backend/package*.json ./
 RUN npm install --production
 
-# Copy toàn bộ mã nguồn
-COPY . .
+# Copy toàn bộ mã nguồn backend
+COPY backend/ .
 
 # Mở port 5000
 EXPOSE 5000
